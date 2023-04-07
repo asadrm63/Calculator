@@ -8,7 +8,7 @@
 //should use loops
 //cant use evaluate
 // = can submit or can operate with each set of nummbers
-// includes?
+// useincludes method?
 //array?
 //
 
@@ -20,75 +20,68 @@
 
 
 const buttons = document.querySelectorAll("button");
-// const numbers = document.querySelectorAll(".number");
-
-// const button1 = document.querySelector(".button1")
-// const button2 = document.querySelector(".button2")
-// const button3 = document.querySelector(".button3")
-// const plusbutton = document.querySelector(".plusbutton")
-// const equalsbutton = document.querySelector(".equals")
-
+const operators = document.querySelectorAll(".operators");
+const equalsButton = document.getElementById('equals-button');
+const clearButton = document.getElementById('clear');
 const output = document.querySelector(".output");
-let a =0;
+let a =0
 let b =0;
 
-let result = "";
+// let result = "";
 
 // buttons.style.backgroundColor = "blue"; 
 
 
 buttons.forEach(button => {
+    button.style.backgroundColor = "lightblue"; 
     button.addEventListener("click", (e) => {
         output.innerText += button.value 
     });
   });
 
+  let ops = '';
 
-// addEventListener('click', (event)=> {
-//     result+=1
-//     output.innerText = result;
-//     a += 1
-//    }
-//    )
+  operators.forEach(operator => {
+    operator.addEventListener('click',() => {
+        ops = operator.value;
+        console.log(ops)
+    })
+  })
 
-// button1.addEventListener('click', (event)=> {
-//  result+=1
-//  output.innerText = result;
-//  a += 1
-// }
-// )
 
-// button2.addEventListener('click', (event)=> {
-// result+=2
-// output.innerText = result;
-// b = 2
-// }
-// )
+  equalsButton.addEventListener('click', () => {
+    // Get the value of the input box
+    const equation = output.innerText
+     a= parseInt(equation.split(`${ops}`)[0])
+     b= parseInt(equation.split(`${ops}`)[1])
 
-// button3.addEventListener('click', (event)=> {
-// result+=3
-// output.innerText = result;
-// }
-// )
-// plusbutton.addEventListener('click', (event)=> {
-// result+="+"
-// output.innerText = result;
-// }
-// )
-// equalsbutton.addEventListener('click', (event)=> {
-//     output.innerText = a+b;
-// }
-// )
+    // use calculator function
+    const result = calculator(a,ops,b);
+  
+    // Set the input box value to the result
+    output.innerText = result;
+  });
 
 
 
-// function ops(a,operator,b){
-//     if (operator === "+"){
-//        return a + b
-//     }
-//        else if (operator === '-') {return a - b;}
-//       else if (operator === '*') {return a * b;}
-//       else{ return a/b;}
-//     }
+  clearButton.addEventListener("click", () =>  {
+  output.innerText =""
+  });
+
+
+
+  //when = cliked on evaluate equation 
+  // save fisrt digits to a variable 
+  // save operator 
+  // save second set of variable
+  
+function calculator(a,ops,b){
+    if (ops == "+"){
+       return a + b
+    }
+       else if (ops === '-') {return a - b;}
+      else if (ops === '*') {return a * b;}
+      else{ return a/b;}
+    }
 
 
