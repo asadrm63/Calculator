@@ -3,15 +3,12 @@
 //operate
 //show result
 
-
-
 //should use loops
 //cant use evaluate
 // = can submit or can operate with each set of nummbers
 // useincludes method?
 //array?
 //
-
 
 // use seperate class for number / operators/ =
 
@@ -29,11 +26,10 @@ let b =0;
 
 // let result = "";
 
-// buttons.style.backgroundColor = "blue"; 
+ equalsButton.style.backgroundColor = "orange"; 
 
 
 buttons.forEach(button => {
-    button.style.backgroundColor = "lightblue"; 
     button.addEventListener("click", (e) => {
         output.innerText += button.value 
     });
