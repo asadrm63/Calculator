@@ -21,10 +21,38 @@ const operators = document.querySelectorAll(".operators");
 const equalsButton = document.getElementById('equals-button');
 const clearButton = document.getElementById('clear');
 const output = document.querySelector(".output");
+const clock = document.querySelector(".clock");
 let a =0
 let b =0;
 
 // let result = "";
+
+//showing actual time
+let today = new Date();
+let time = today.getHours() + ":" + today.getMinutes()
+clock.innerText = time;
+// let currenttime =setTimeout(time, 60)
+
+
+//trying to update the clock every minute
+setInterval(() => {
+    let today = new Date();
+let time = today.getHours() + ":"+ today.getMinutes();
+
+
+if (today.getMinutes() <10) {
+    + "0" + today.getMinutes();
+}
+else {+ today.getMinutes()};
+
+
+    clock.innerText = time; 
+    console.log(time)
+  }, 20000 )
+
+//if minute <10 then add 0
+
+// clock.innerText = time
 
  equalsButton.style.backgroundColor = "orange"; 
 

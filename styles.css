@@ -1,17 +1,20 @@
 *{
     padding: 0px;
-    margin: 0px;
+    /* margin: 0px; */
     color: white;
     user-select: none;
+    box-shadow: none;
 }
 
-
+fixec width height to display
 
 body {
     font-family:Arial, Helvetica, sans-serif;
     margin: 25px;
     display: flex;
-    background-color:;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
 }
 .cal{
     background-color: black;
@@ -19,6 +22,8 @@ body {
     height: 677px;
     width: 343px;
     padding: 20px;
+    /* display: flex;
+    flex-wrap: wrap; */
     /* padding-bottom: 5%; */
 }
  .top{
@@ -29,21 +34,20 @@ body {
 
 
  .display{
-    /* font-size: 130px; */
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 140;
     margin-bottom: 20px;
     text-align: right;
+    height: 40px;
+    /* padding: 1px; */
 }
 button{
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    /* background-color: darkgrey; */
     margin: 3px;
     font-size: 23px;
-    box-shadow: 1px;
-    
+    border: none;  
 }
 
 .number{
@@ -52,19 +56,40 @@ button{
 
 #zerobtn{
 
-    /* background-color: aquamarine; */
-    width: 158px;
-    border-radius: 42%;
+    width: 165px;
+    border-radius: 55px;
+    padding-right: 86px;
+    
 }
 .operators{
-    background-color: #ffbe0b;
-    /* color: white; */
+    background-color: #f1a33c;
 }
 
 .specialbtn{
-    background-color: darkgray;
+    background-color: #afafaf;
     color: black;
+}
+
+.fifth-row {
+    display:grid;
+    grid-template-columns:repeat(4,1fr) 
 }
 /* special buttons font black */
 /* buttons clicked becomes white button pressed */
+button:active,
+button:focus {
+    filter: brightness(120%);
+}
+
 /* add comas to number */
+
+
+.bottom{
+    width: 150px;
+    height: 5px;
+    background:white;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 35px;    
+    left: 125px;
+}   
