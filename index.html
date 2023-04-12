@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css" />
-
+  </head>
+  <body>
     <!-- <div> -->
       <div class="cal">
         <div class="top">
         <div class="clock">10:45</div>
-        <div><img src="status.png" alt="" height="17px" width="100px"></div>
+        <div><img src="status.png" alt="batteryicon" height="17px" width="100px"></div>
       </div>
         <div class="display">
           <p class="output"></p>
         </div>
-       <div class="buttons" >
+       <div class="buttons-container" >
         <!-- <div class="first-row"> -->
           <button class="specialbtn" id="clear">AC</button>
-          <button class="specialbtn">+/-</button>
-          <button class="specialbtn">%</button>
+          <button class="specialbtn"  id="neg">+/-</button>
+          <button class="specialbtn" id="percent">%</button>
           <button class='operators' value="/">÷</button>
         <!-- </div> -->
         <!-- <div class="second-row"> -->
@@ -51,8 +52,8 @@
         <div class="bottom"></div>
       </div>
     <!-- </div> -->
-  </head>
-  <body>
+  
+
     <script src="script.js"></script>
   </body>
 </html>
